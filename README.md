@@ -1,9 +1,22 @@
-# MathExpressionCalculator
-parses and calculates math expressions
+Grammar:
+<expr> -> (<expr>) |
+	<term> + <term> |
+	<term> - <term> |
+	<term> * <term> |
+	<term> \ <term> |
+<term> -> const
 
-This is my first c project, I have no prior experience using it.
-Please enjoy this pure unadultured organic artisnal code.
+<digit> = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
 
-This project was made without AI or the web and only with https://en.cppreference.com/c/language/main_function as a reference
-This is the first project I am fully following the conventional commits standard https://www.conventionalcommits.org/en/v1.0.0/#specification
-Following the Linux kernal style guide https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+
+Notes:
+
+allowed characters: [0..9] | + | - | * | / | ( | )
+
+Parsed and calculated bottom up, thus precedent is managed automatically
+
+edge cases:
+	3(1+2)
+	(1+3)(1-3)
+	div by 0
+	negative vs minus

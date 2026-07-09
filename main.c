@@ -24,6 +24,13 @@ int main(int argc, char *argv[]) {
 			ind++;
 		}
 	}
+
+	// print out the expression without spaces
+	printf("Expression without spaces: ");
+	for (int i = 0; i < ind; i++) {
+		printf("%c", expr[i]);
+	}
+
 	printf("\n");
 
 	# tokenize
